@@ -40,12 +40,12 @@
       const key = event.key;
 
       if (
-        (event.keyCode >= 112 && event.keyCode <= 123) || // F1-F12
-        (event.ctrlKey && event.shiftKey && ['I', 'J', 'C'].includes(key.toUpperCase())) || // DevTools (Ctrl+Shift+I/J/C)
-        (event.ctrlKey && key.toUpperCase() === 'U') // View Source (Ctrl+U)
+        (event.keyCode >= 112 && event.keyCode <= 123) || 
+        (event.ctrlKey && event.shiftKey && ['I', 'J', 'C'].includes(key.toUpperCase())) || 
+        (event.ctrlKey && key.toUpperCase() === 'U') 
       ) {
-        event.preventDefault(); // Prevent the default action (like opening dev tools)
-        showPopup(); // Show the warning
+        event.preventDefault(); 
+        showPopup(); 
       }
     });
 
