@@ -19,7 +19,6 @@
       sidebar.classList.remove('show');
     }
 
-
     // --- Inspection Blocking Code ---
 
     // Function to show the "Action Disabled" popup
