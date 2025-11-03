@@ -1,23 +1,14 @@
 // Function to show the sidebar
-    function showSidebar() {
-      const sidebar = document.querySelector('.sidebar');
-      sidebar.classList.add('show');
-    }
+function showSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  sidebar.classList.add('show');
+}
 
-    // Function to hide the sidebar
-    function hideSidebar() {
-      const sidebar = document.querySelector('.sidebar');
-      sidebar.classList.remove('show');}
-
-      function showSidebar() {
-      const sidebar = document.querySelector('.sidebar');
-      sidebar.classList.add('show');
-    }
-
-    function hideSidebar() {
-      const sidebar = document.querySelector('.sidebar');
-      sidebar.classList.remove('show');
-    }
+// Function to hide the sidebar
+function hideSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  sidebar.classList.remove('show');
+}
 
     // --- Inspection Blocking Code ---
 
