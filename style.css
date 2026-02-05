@@ -474,7 +474,7 @@ nav .logo span:hover {
   opacity: 0.6;
 }
 
-/* Mobile-specific fix for projects (always show data on very small screens or make it clickable) */
+/* Mobile-specific  */
 @media (hover: none) {
   .card__data {
     bottom: 1rem;
