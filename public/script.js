@@ -1,45 +1,40 @@
-// Function to show the sidebar
-function showSidebar() {
-  const sidebar = document.querySelector('.sidebar');
-  sidebar.classList.add('show');
-}
+     // --- Sidebar Logic ---
+    function showSidebar() {
+      const sidebar = document.querySelector('.sidebar');
+      sidebar.classList.add('show');
+    }
 
-// Function to hide the sidebar
-function hideSidebar() {
-  const sidebar = document.querySelector('.sidebar');
-  sidebar.classList.remove('show');
-}
+    function hideSidebar() {
+      const sidebar = document.querySelector('.sidebar');
+      sidebar.classList.remove('show');
+    }
 
     // --- Inspection Blocking Code ---
-
-    // Function to show the "Action Disabled" popup
     function showPopup() {
       const popup = document.getElementById("popup");
       if (popup) {
         popup.classList.add("show");
-
-        // Hide the popup after 3 seconds
+        // Hide the popup after 2 seconds
         setTimeout(() => {
           popup.classList.remove("show");
-        }, 1000);
+        }, 2000);
       }
     }
 
-    // Listener for keyboard shortcuts
+    // Block keyboard shortcuts
     document.addEventListener("keydown", function (event) {
       const key = event.key;
-
       if (
-        (event.keyCode >= 112 && event.keyCode <= 123) || 
-        (event.ctrlKey && event.shiftKey && ['I', 'J', 'C'].includes(key.toUpperCase())) || 
-        (event.ctrlKey && key.toUpperCase() === 'U') 
+        (event.keyCode >= 112 && event.keyCode <= 123) || // F-keys
+        (event.ctrlKey && event.shiftKey && ['I', 'J', 'C'].includes(key.toUpperCase())) || // DevTools
+        (event.ctrlKey && key.toUpperCase() === 'U') // View Source
       ) {
         event.preventDefault(); 
         showPopup(); 
       }
     });
 
-    // Listener for mouse wheel zoom
+    // Block Ctrl+Scroll (Zoom) - Optional, but keeping based on user request
     document.addEventListener("wheel", function (event) {
       if (event.ctrlKey) {
         event.preventDefault();
@@ -47,7 +42,7 @@ function hideSidebar() {
       }
     }, { passive: false });
 
-    // Listener for right-click (context menu)
+    // Block Right Click
     document.addEventListener("contextmenu", function (event) {
       event.preventDefault();
       showPopup();
